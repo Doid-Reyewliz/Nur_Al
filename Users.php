@@ -60,7 +60,7 @@ if ($_SESSION['role'] == 2) {
                                 "</td><td>" . $row["Birthday"] .
                                 "</td><td>" . $row["Question"] .
                                 "</td><td>" . $row["Answer"] .
-                                "</td><td>" . "<form action='del.php'; method='POST'> <input hidden name='log'; value='$row[Login]';><input hidden name='id'; value='$row[id]';><button class='trash'; type='submit'><img src='https://img.icons8.com/fluent/48/000000/filled-trash.png'> </img></button></form>" .
+                                "</td><td>" . "<button class='trash'; data-id='$row[id]' type='submit'><img src='https://img.icons8.com/fluent/48/000000/filled-trash.png'> </img></button>" .
                                 "</td></tr>";
                         }
                     }
@@ -104,7 +104,30 @@ if ($_SESSION['role'] == 2) {
     
     </body>";
 }
-    ?>
-    </body>
+?>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//remove
+$(document).ready(function(){
+    $('.trash').click(function(){
+        var el = this;
+        var deleteprod = $(this).data('id');
+        var confirmalert = confirm("Are you sure?");
 
-    </html>
+        if (confirmalert == true) {
+        $.ajax({
+            url: 'del.php',
+            type: 'POST',
+            data: { id:deleteprod },
+            success: function(response){
+                $(el).closest('tr').fadeOut(800,function(){
+                $(this).remove();
+                });
+            }
+            });
+        }
+    });
+});
+</script>
+</html>

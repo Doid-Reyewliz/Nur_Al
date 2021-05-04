@@ -23,7 +23,7 @@ if($_SESSION['role'] == 2){
                                 <h4>{$row['Company']}</h4>
                                 <h4>Difficult: <span>{$row['Dif']}</span></h4>
                             </div>
-                            <button class='rem' data-id='{$row['Code']} type='submit'>Remove</button>
+                            <button class='rem' data-id='{$row['Code']}' type='submit'>Remove</button>
                         </div>";
         }
         echo $output;
