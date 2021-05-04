@@ -46,14 +46,14 @@ elseif($_SESSION['role'] == 3){
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
             $output .= "<div class='course'>
-                            <form class='edit'>
+                            <div class='edit'>
                                 <input id='name' type='text' name='name' value='{$row['Name']}'>
                                 <input id='comp' type='text' name='comp' value='{$row['Company']}'>
                                 <input id='dif' type='text' name='dif' value='{$row['Dif']}'>
                                 <input id='code' type='text' name='code' value='{$row['Code']}'>
-                                <input id='name' hidden type='text' name='id' value='{$row['id']}'>
+                                <input id='id' hidden type='text' name='id' value='{$row['id']}'>
                                 <button class='b_edit' type='submit'>Edit</button>
-                            </form>
+                            </div>
                         </div>";
         }
         echo $output;
@@ -79,10 +79,7 @@ else{
                             <div class='Text'>
                                 <h2>{$row['Name']}</h2>
                                 <h4>{$row['Company']}</h4>
-                                <h4>Difficult: <span <?php if ({$row['Dif']} == 'Easy') echo \"class='easy'\";
-                                                        elseif ({$row['Dif']} == 'Mid') echo \"class='mid'\";
-                                                        else echo \"class='hard'\";
-                                                    ?> {$row['Dif']}</span></h4>
+                                <h4>Difficult: <span>{$row['Dif']}</span></h4>
                             </div>
                             <form action='sub.php' method='POST'>
                                 <input hidden name='code' type='text' value='{$row['Code']}'>

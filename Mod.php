@@ -63,7 +63,9 @@ if ($_SESSION['role'] == 3) {
         <div id="search">
             <input name="search" class="search" type="text" placeholder=" Search">
         </div>
-        <div class="courses"></div>
+        <div class="courses">
+        
+        </div>
     </div>
 <?php
 }
@@ -134,12 +136,12 @@ $(document).ready(function(){
 
 //edit
 $(document).ready(function(){
-    $(.b_edit).click(function(){
-        var id=$("id").val();
-        var name=$("#name").val();
-        var comp=$("#comp").val();
-        var dif=$("#dif").val();
-        var code=$("#code").val();
+    $('.b_edit').click(function(){
+        var name=$('#name').val();
+        var comp=$('#comp').val();
+        var dif=$('#dif').val();
+        var code=$('#code').val();
+        var id=$('#id').val();
 
         $.ajax({
             url:'c_edit.php',
@@ -147,9 +149,9 @@ $(document).ready(function(){
             data:{
                 id:id,
                 name:name,
-                ctgr:comp,
-                name:dif,
-                ctgr:code
+                comp:comp,
+                dif:dif,
+                code:code
             },
             success:function(response){
                 alert(response);
