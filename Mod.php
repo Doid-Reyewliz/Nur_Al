@@ -40,9 +40,7 @@ if ($_SESSION['role'] == 3) {
 <body>
     <div class="content">
         <h1>Manage Courses</h1>
-        <div id="search">
-            <input name="search" class="search" type="text" placeholder=" Search">
-        </div>
+        
 
         <?php if (isset($_GET['edit'])) {echo "<span class='edit'; style='width: 300px; margin-left: 40%; padding-top: 0; font-size: 18px;'>" . $_GET['edit'] . "</span>";}?>
         <br>
@@ -61,6 +59,9 @@ if ($_SESSION['role'] == 3) {
                     </div>
                 </form>
             </div>
+        </div>
+        <div id="search">
+            <input name="search" class="search" type="text" placeholder=" Search">
         </div>
         <div class="courses">
         </div>
