@@ -38,7 +38,7 @@
 <body>
     <div class="content">
         <h1 class="title">My Courses</h1>
-        <div class="courses">
+        <div class="my_courses">
             <?php
             require_once("db.php");
             $db = new Dbase();
@@ -58,7 +58,7 @@
                 foreach ($course as $key => $value) {
                     if (stristr($courses, $course[$key]["Code"])) {
             ?>
-                        <div class="course">
+                        <div class="my_course">
                             <div class="text">
                                 <h2><?php echo $course[$key]["Name"]; ?></h2>
                                 <h4><?php echo $course[$key]["Company"]; ?></h4>
@@ -96,7 +96,7 @@ $(document).ready(function(){
             type: 'POST',
             data: { code:deleteprod },
             success: function(response){
-                $(el).closest('.course').fadeOut(800,function(){
+                $(el).closest('.my_course').fadeOut(800,function(){
                 $(this).remove();
                 });
             }

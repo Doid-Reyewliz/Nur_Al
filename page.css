@@ -184,7 +184,7 @@ footer{
 }
 
 
-/* MyC.php & Market.php */
+/* Market.php */
 .courses{
     display: flex;
     justify-content: space-evenly;
@@ -193,7 +193,7 @@ footer{
 .empty{
     margin-bottom: 8%;
 }
-.course{
+.my_course, .course{
     border-radius: 20px;
     width: 390px;
     height: 260px;
@@ -207,7 +207,7 @@ footer{
 .course form{
     margin-left: 5%;
 }
-.course h4, .course h2{
+.my_course h4, .my_course h2,.course h4, .course h2{
     margin-left: 5%;
     font-weight: bold;
 }
@@ -217,7 +217,6 @@ footer{
     transition: .2s;
     color: #fff;
     cursor: pointer;
-    margin-left: 5%;
     text-align: left;
     font-weight: bold;
     letter-spacing: 1px;
@@ -241,6 +240,32 @@ footer{
 }
 .unsub:hover{
     box-shadow: 1px 1px 2px rgba(70, 74, 146, 0.3), -1px -1px 2px rgba(18, 18, 36, 0.5), inset -10px 10px 20px rgba(18, 18, 36, 0.2), inset 10px -10px 20px rgba(18, 18, 36, 0.2), inset -10px -10px 20px rgba(70, 74, 146, 0.9), inset 10px 10px 25px rgba(18, 18, 36, 0.9);
+}
+
+/* MyC.php */
+.my_courses{
+    display: flex;
+    flex-direction: column;
+}
+
+.my_course{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5%;
+    width: 80%;
+    padding-left: 2%;
+    padding-right: 5%;
+}
+
+.my_course .text{
+    width: 70%;
+}
+
+.my_course .unsub{
+    width: 15%;
+    height: 20%;
 }
 
 
