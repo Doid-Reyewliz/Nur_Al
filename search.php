@@ -47,11 +47,11 @@ elseif($_SESSION['role'] == 3){
         while($row = mysqli_fetch_assoc($sql)){
             $output .= "<div class='course'>
                             <form class='edit'>
-                                <input type='text' name='name' value='{$row['Name']}'>
-                                <input type='text' name='comp' value='{$row['Company']}'>
-                                <input type='text' name='dif' value='{$row['Dif']}'>
-                                <input type='text' name='code' value='{$row['Code']}'>
-                                <input hidden type='text' name='id' value='{$row['id']}'>
+                                <input id='name' type='text' name='name' value='{$row['Name']}'>
+                                <input id='comp' type='text' name='comp' value='{$row['Company']}'>
+                                <input id='dif' type='text' name='dif' value='{$row['Dif']}'>
+                                <input id='code' type='text' name='code' value='{$row['Code']}'>
+                                <input id='name' hidden type='text' name='id' value='{$row['id']}'>
                                 <button class='b_edit' type='submit'>Edit</button>
                             </form>
                         </div>";
