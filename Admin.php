@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['role'] == 2) { 
+if ($_SESSION['role'] == 2) {
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +46,9 @@ if ($_SESSION['role'] == 2) {
             <input name="search" class="search" type="text" placeholder=" Search">
         </div>
 
-        <div class="courses"></div>
+        <div class="courses">
+
+        </div>
     </div>
 <?php
 } else {
@@ -83,32 +85,11 @@ if ($_SESSION['role'] == 2) {
     
     </body>";
 }
-    ?>
+?>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-//remove
-$(document).ready(function(){
-    $('.rem').click(function(){
-        var el = this;
-        var deleteprod = $(this).data('id');
-        var confirmalert = confirm("Are you sure?");
-
-        if (confirmalert == true) {
-        $.ajax({
-            url: 'del.php',
-            type: 'POST',
-            data: { code:deleteprod },
-            success: function(response){
-                $(el).closest('.course').fadeOut(800,function(){
-                $(this).remove();
-                });
-            }
-            });
-        }
-    });
-});
 
 //search
 $(document).ready(function(){

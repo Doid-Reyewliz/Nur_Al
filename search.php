@@ -17,13 +17,13 @@ if($_SESSION['role'] == 2){
 
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
-            $output .=  "<div class='course'>
+            $output .= "<div class='course'>
                             <div class='Text'>
                                 <h2>{$row['Name']}</h2>
                                 <h4>{$row['Company']}</h4>
                                 <h4>Difficult: <span>{$row['Dif']}</span></h4>
                             </div>
-                            <button class='rem' data-id='{$row['Code']}' type='submit'>Remove</button>
+                            <button class='rem' data-id='{$row['Code']}'>Remove</button>
                         </div>";
         }
         echo $output;
@@ -96,3 +96,53 @@ else{
 }
 
 ?>
+
+<script>
+//Remove For Admin
+$(document).ready(function(){
+    $('.rem').click(function(){
+        var el = this;
+        var deleteprod = $(this).data('id');
+        var confirmalert = confirm("Delete this course?");
+
+        if (confirmalert == true) {
+        $.ajax({
+            url: 'del.php',
+            type: 'POST',
+            data: { code:deleteprod },
+            success: function(response){
+                $(el).closest('.course').fadeOut(800,function(){
+                $(this).remove();
+                });
+            }
+            });
+        }
+    });
+});
+
+//Edit For Moderator
+$(document).ready(function(){
+    $('.b_edit').click(function(){
+        var name=$('#name').val();
+        var comp=$('#comp').val();
+        var dif=$('#dif').val();
+        var code=$('#code').val();
+        var id=$('#id').val();
+
+        $.ajax({
+            url:'c_edit.php',
+            method:'POST',
+            data:{
+                id:id,
+                name:name,
+                comp:comp,
+                dif:dif,
+                code:code
+            },
+            success:function(response){
+                alert("Edited");
+            }
+        });
+    });
+});
+</script>

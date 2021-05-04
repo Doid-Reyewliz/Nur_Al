@@ -133,32 +133,5 @@ $(document).ready(function(){
         }
     });
 });
-
-//edit
-$(document).ready(function(){
-    $('.b_edit').click(function(){
-        var name=$('#name').val();
-        var comp=$('#comp').val();
-        var dif=$('#dif').val();
-        var code=$('#code').val();
-        var id=$('#id').val();
-
-        $.ajax({
-            url:'c_edit.php',
-            method:'POST',
-            data:{
-                id:id,
-                name:name,
-                comp:comp,
-                dif:dif,
-                code:code
-            },
-            success:function(response){
-                alert(response);
-            }
-        });
-    });
-});
 </script>
-
 </html>
