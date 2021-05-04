@@ -190,6 +190,10 @@ footer{
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+.new{
+    margin-left: 5%;
+    width: 40%;
+}
 .empty{
     margin-bottom: 8%;
 }
@@ -247,7 +251,6 @@ footer{
     display: flex;
     flex-direction: column;
 }
-
 .my_course{
     display: flex;
     flex-direction: row;
@@ -258,11 +261,9 @@ footer{
     padding-left: 2%;
     padding-right: 5%;
 }
-
 .my_course .text{
     width: 70%;
 }
-
 .my_course .unsub{
     width: 15%;
     height: 20%;
@@ -325,6 +326,9 @@ footer{
     background-position: 90% 50%;
     background-image: url("https://img.icons8.com/pastel-glyph/64/ffffff/edit--v1.png");
 }
+.add_new button{
+    margin-top: 5%;
+}
 .add_new button:hover{
     box-shadow: 1px 1px 2px rgba(70, 74, 146, 0.3), -1px -1px 2px rgba(18, 18, 36, 0.5), inset -10px 10px 20px rgba(18, 18, 36, 0.2), inset 10px -10px 20px rgba(18, 18, 36, 0.2), inset -10px -10px 20px rgba(70, 74, 146, 0.9), inset 10px 10px 25px rgba(18, 18, 36, 0.9);
 }
@@ -335,6 +339,7 @@ footer{
     border: none;
 }
 .rem{
+    margin-left: 5%;
     background-image: url("https://img.icons8.com/material-rounded/24/ffffff/delete-forever.png");
 }
 .rem:hover, .b_edit:hover{

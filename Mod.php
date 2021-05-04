@@ -46,8 +46,7 @@ if ($_SESSION['role'] == 3) {
 
         <?php if (isset($_GET['edit'])) {echo "<span class='edit'; style='width: 300px; margin-left: 40%; padding-top: 0; font-size: 18px;'>" . $_GET['edit'] . "</span>";}?>
         <br>
-
-        <div class="courses">
+        <div class="new">
             <div class="course">
                 <form class="add_new" action="add.php" method="POST">
                     <input name="name" type="text" placeholder="Name" autocomplete="off">
@@ -62,6 +61,8 @@ if ($_SESSION['role'] == 3) {
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="courses">
         </div>
     </div>
 <?php
