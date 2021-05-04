@@ -140,7 +140,7 @@ $(document).ready(function(){
                 code:code
             },
             success:function(response){
-                alert("Edited");
+                alert("Successfully Edited");
             }
         });
     });

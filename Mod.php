@@ -46,18 +46,18 @@ if ($_SESSION['role'] == 3) {
         <br>
         <div class="new">
             <div class="course">
-                <form class="add_new" action="add.php" method="POST">
-                    <input name="name" type="text" placeholder="Name" autocomplete="off">
-                    <input name="comp" type="text" placeholder="Company" autocomplete="off">
-                    <input name="dif" type="text" placeholder="Difficult" autocomplete="off">
-                    <input name="code" type="text" placeholder="Code" autocomplete="off">
+                <div class="add_new">
+                    <input class="c_name" name="name" type="text" placeholder="Name" autocomplete="off">
+                    <input class="comp" name="comp" type="text" placeholder="Company" autocomplete="off">
+                    <input class="dif" name="dif" type="text" placeholder="Difficult" autocomplete="off">
+                    <input class="code" name="code" type="text" placeholder="Code" autocomplete="off">
                     <div>
-                        <button type="submit">Add</button>
+                        <button id="add" type="submit">Add</button>
                         <?php if (isset($_GET['error'])) {
                             echo "<span class='error'>" . $_GET['error'] . "</span>";
                         } ?>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
         <div id="search">
@@ -131,6 +131,31 @@ $(document).ready(function(){
         }else{
             loadData();
         }
+    });
+});
+
+//add
+$(document).ready(function(){
+    $('#add').click(function(){
+        var name=$('.c_name').val();
+        var comp=$('.comp').val();
+        var dif=$('.dif').val();
+        var code=$('.code').val();
+
+        $.ajax({
+            url:'add.php',
+            method:'POST',
+            cache: false,
+            data:{
+                name:name,
+                comp:comp,
+                dif:dif,
+                code:code
+            },
+            success:function(response){
+                alert("Successfully Added");
+            }
+        });
     });
 });
 </script>
