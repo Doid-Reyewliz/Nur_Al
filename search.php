@@ -11,9 +11,7 @@ if($_SESSION['role'] == 2){
         $search = $_POST['query'];
         $sql = $db->sql("SELECT * FROM course WHERE Name LIKE '%$search%' OR Company LIKE '%$search%'");
     }
-    else{
-        $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
-    }
+    else $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
 
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
@@ -39,9 +37,7 @@ elseif($_SESSION['role'] == 3){
         $search = $_POST['query'];
         $sql = $db->sql("SELECT * FROM course WHERE Name LIKE '%$search%' OR Company LIKE '%$search%'");
     }
-    else{
-        $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
-    }
+    else $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
 
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
@@ -69,9 +65,7 @@ else{
         $search = $_POST['query'];
         $sql = $db->sql("SELECT * FROM course WHERE Name LIKE '%$search%' OR Company LIKE '%$search%'");
     }
-    else{
-        $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
-    }
+    else $sql = $db->sql("SELECT * FROM course ORDER BY id ASC");
 
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
@@ -106,15 +100,15 @@ $(document).ready(function(){
         var confirmalert = confirm("Delete this course?");
 
         if (confirmalert == true) {
-        $.ajax({
-            url: 'del.php',
-            type: 'POST',
-            data: { code:deleteprod },
-            success: function(response){
-                $(el).closest('.course').fadeOut(800,function(){
-                $(this).remove();
-                });
-            }
+            $.ajax({
+                url: 'del.php',
+                type: 'POST',
+                data: { code:deleteprod },
+                success: function(response){
+                    $(el).closest('.course').fadeOut(800,function(){
+                    $(this).remove();
+                    });
+                }
             });
         }
     });
