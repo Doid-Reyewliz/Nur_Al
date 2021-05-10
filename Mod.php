@@ -40,7 +40,7 @@ if ($_SESSION['role'] == 3) {
 <body>
     <div class="content">
         <h1>Manage Courses</h1>
-        
+       
 
         <?php if (isset($_GET['edit'])) {echo "<span class='edit'; style='width: 300px; margin-left: 40%; padding-top: 0; font-size: 18px;'>" . $_GET['edit'] . "</span>";}?>
         <br>
@@ -59,12 +59,11 @@ if ($_SESSION['role'] == 3) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <div id="search">
             <input name="search" class="search" type="text" placeholder=" Search">
         </div>
         <div class="courses">
-        
         </div>
     </div>
 <?php
@@ -107,7 +106,7 @@ else {
 ?>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 //search
 $(document).ready(function(){
@@ -154,9 +153,11 @@ $(document).ready(function(){
             },
             success:function(response){
                 alert("Successfully Added");
+                window.location.reload()
             }
         });
     });
 });
 </script>
+
 </html>

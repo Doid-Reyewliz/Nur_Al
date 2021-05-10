@@ -3,7 +3,7 @@ class Dbase{
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "task7";
+    private $database = "projectdb";
     private $conn;
 
     function __construct() {

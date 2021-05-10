@@ -42,14 +42,14 @@ elseif($_SESSION['role'] == 3){
     if(mysqli_num_rows($sql) > 0){
         while($row = mysqli_fetch_assoc($sql)){
             $output .= "<div class='course'>
-                            <div class='edit'>
+                            <form class='edit' action='c_edit.php' method='POST'>
                                 <input id='name' type='text' name='name' value='{$row['Name']}'>
                                 <input id='comp' type='text' name='comp' value='{$row['Company']}'>
                                 <input id='dif' type='text' name='dif' value='{$row['Dif']}'>
                                 <input id='code' type='text' name='code' value='{$row['Code']}'>
                                 <input id='id' hidden type='text' name='id' value='{$row['id']}'>
                                 <button class='b_edit' type='submit'>Edit</button>
-                            </div>
+                            </form>
                         </div>";
         }
         echo $output;
@@ -117,26 +117,7 @@ $(document).ready(function(){
 //Edit For Moderator
 $(document).ready(function(){
     $('.b_edit').click(function(){
-        var name=$('#name').val();
-        var comp=$('#comp').val();
-        var dif=$('#dif').val();
-        var code=$('#code').val();
-        var id=$('#id').val();
-
-        $.ajax({
-            url:'c_edit.php',
-            method:'POST',
-            data:{
-                id:id,
-                name:name,
-                comp:comp,
-                dif:dif,
-                code:code
-            },
-            success:function(response){
-                alert("Successfully Edited");
-            }
-        });
+        alert("Successfully Edited");
     });
 });
 </script>

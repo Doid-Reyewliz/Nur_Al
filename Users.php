@@ -60,7 +60,7 @@ if ($_SESSION['role'] == 2) {
                                 "</td><td>" . $row["Birthday"] .
                                 "</td><td>" . $row["Question"] .
                                 "</td><td>" . $row["Answer"] .
-                                "</td><td>" . "<button class='trash'; data-id='$row[id]' type='submit'><img src='https://img.icons8.com/fluent/48/000000/filled-trash.png'> </img></button>" .
+                                "</td><td>" . "<button class='trash'; data-id='$row[Login]' type='submit'><img src='https://img.icons8.com/fluent/48/000000/filled-trash.png'> </img></button>" .
                                 "</td></tr>";
                         }
                     }
@@ -106,7 +106,7 @@ if ($_SESSION['role'] == 2) {
 }
 ?>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 //remove
 $(document).ready(function(){
@@ -119,7 +119,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'del.php',
             type: 'POST',
-            data: { id:deleteprod },
+            data: { log:deleteprod },
             success: function(response){
                 $(el).closest('tr').fadeOut(800,function(){
                 $(this).remove();

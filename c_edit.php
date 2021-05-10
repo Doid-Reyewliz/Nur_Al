@@ -1,8 +1,7 @@
 <?php
-require_once "db.php";
-$db = new Dbase();
+    require_once("db.php");
+    $db = new Dbase();
 
-if(isset($_POST['id'], $_POST['name'], $_POST['comp'], $_POST['dif'], $_POST['code'])){
     $id = $_POST['id'];
     $name = $_POST['name'];
     $comp = $_POST['comp'];
@@ -10,6 +9,6 @@ if(isset($_POST['id'], $_POST['name'], $_POST['comp'], $_POST['dif'], $_POST['co
     $code = $_POST['code'];
 
     $sql = $db->sql("UPDATE course SET `Name`='$name',`Company`='$comp',`Dif`='$dif',`Code`='$code' WHERE id=$id");
-    exit;
-}
+
+    header("Location:Mod.php");
 ?>

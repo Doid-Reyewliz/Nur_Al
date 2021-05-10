@@ -33,7 +33,7 @@ if (isset($_SESSION['id'])) {
                     <div class="container">
                          <div class="content">
                               <h2 class="profl">Welcome <span> <?php echo $name; ?> </span> </h2>
-                              <h2 class="prof">Information: <a href="Edit.php"><img src="https://img.icons8.com/material/50/ffffff/edit.png"/></a></h2>
+                              <h2 class="prof">Information: <a href="Edit.php"><img src="https://img.icons8.com/pastel-glyph/64/ffffff/edit--v1.png"/></a></h2>
                               <div class="inf">
                                         <p> <?php
                                              echo nl2br("Login: <span>" . $login .
