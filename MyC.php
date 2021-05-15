@@ -74,7 +74,7 @@
                 }
             }
             else{?>
-                <h4 class="empty">You haven't subscribed to any courses yet</h4>
+                <h4 class="empty" style="text-align:center;">You haven't subscribed to any courses yet</h4>
             <?php }
 
             ?>

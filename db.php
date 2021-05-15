@@ -17,6 +17,8 @@ class Dbase{
 
     function query($query){
         $result = mysqli_query($this->conn, $query);
+        //printf("Error: %s\n", mysqli_error($this->conn));
+
         while($row = mysqli_fetch_assoc($result)){
             $resultset[] = $row;
         }
@@ -27,6 +29,8 @@ class Dbase{
 
     function sql($sqli){
         $result = mysqli_query($this->conn, $sqli);
+        //printf("Error: %s\n", mysqli_error($this->conn));
+
 
         if($result == TRUE){
             return $result;

@@ -49,7 +49,7 @@
             <button>Read More</button>
         </div>
         <div class="image">
-            <img src="char.png" alt="">
+            <img src="s.png" alt="">
         </div>
     </div>
     <div class="content">

@@ -69,19 +69,14 @@ footer{
 }
 
 .image{
+    display: flex;
+    justify-content: center;
     width: 30%;
 }
 .image img{
-    width: 150%;
-    animation: animate 4s linear infinite;
-}
-@keyframes animate {
-    0%, 100%{
-        transform: translateY(40px);
-    }
-    50%{
-        transform: translateY(80px);
-    }
+    display: flex;
+    align-self: flex-end;
+    width: 110%;
 }
 
 .nav, .profile{
